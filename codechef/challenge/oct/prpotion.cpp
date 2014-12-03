@@ -1,0 +1,81 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+     {
+         int max=0,maxred=0,maxgreen=0,maxblue=0,r,g,m,b,i,j,red[101],green[101],blue[101];
+         char c;
+         cin>>r>>g>>b>>m;
+         for(i=0;i<r;i++)
+            cin>>red[i];
+             
+         for(i=0;i<g;i++)
+             cin>>green[i];
+         for(i=0;i<b;i++)
+             cin>>blue[i];
+         for(i=0;i<m;i++)
+         {
+             max=0;
+             for(j=0;j<r;j++)
+             {
+                 if(red[j]>max)
+                 {
+                     max=red[j];
+                     c='R';
+                 }
+             }
+             for(j=0;j<g;j++)
+             {
+                 if(green[j]>max)
+                 {
+                     max=green[j];
+                     c='G';
+                 }
+             }
+             for(j=0;j<b;j++)
+             {
+                 if(blue[j]>max)
+                 {
+                     max=blue[j];
+                     c='B';
+                 }
+             }
+             if(c=='R')
+             {
+                 for(j=0;j<r;j++)
+                     red[j]=red[j]/2;
+             }
+             if(c=='G')
+             {
+                 for(j=0;j<g;j++)
+                     green[j]=green[j]/2;
+             }
+             if(c=='B')
+             {
+                 for(j=0;j<b;j++)
+                     blue[j]=blue[j]/2;
+             }
+         }
+         max=0;
+         for(i=0;i<r;i++)
+         {
+             if(max<red[i])
+                 max=red[i];
+         }
+         for(i=0;i<g;i++)
+         {
+             if(max<green[i])
+                 max=green[i];
+         }
+         for(i=0;i<b;i++)
+         {
+             if(max<blue[i])
+                 max=blue[i];
+         }
+         cout<<max<<endl;
+     }
+     return 0;
+}

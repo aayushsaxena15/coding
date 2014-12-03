@@ -1,0 +1,39 @@
+#include<stdio.h>
+int main()
+{
+	long long int n,k,a[100001],i,max=-2000000001;
+
+	scanf("%lld%lld",&n,&k);
+	for(i=0;i<n;i++)
+	{
+		scanf("%lld",&a[i]);
+		if(max<a[i])
+			max=a[i];
+	}
+	for(i=0;i<n;i++)
+		a[i]=max-a[i];
+	if(k%2==1)
+	{
+		for(i=0;i<n;i++)
+			printf("%lld ",a[i]);
+	}
+	else
+	{
+		max=-4000000001;
+		for(i=0;i<n;i++)
+		{
+			if(max<a[i])
+				max=a[i];
+		}
+		for(i=0;i<n;i++)
+		{
+			a[i]=max-a[i];
+			printf("%lld ",a[i]);
+		}
+	}
+	printf("\n");
+	return 0;
+}
+
+
+

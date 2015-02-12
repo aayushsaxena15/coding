@@ -3,7 +3,6 @@ coding
 
 
 
-Practice
+Programming Contests.
 
-
-Contains all the competitive questions.
+Contains solutions of programming contests.
